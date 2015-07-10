@@ -1,3 +1,0 @@
-ansible_ssh_user: root
-web_group: web
-iface: eth0
