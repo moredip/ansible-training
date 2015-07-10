@@ -54,16 +54,4 @@ cluster.vm.define "haproxy" do |config|
   config.vm.hostname = "haproxy"
   config.vm.network :private_network, ip: "10.42.0.100"
 end
-
-
-cluster.vm.define "tower" do |config|
-  config.vm.box = "chef/centos-6.5"
-  config.ssh.insert_key = false
-  config.vm.provider :virtualbox do |vb, override|
-    vb.customize ["modifyvm", :id, "--memory", "1024"]
-    vb.customize ["modifyvm", :id, "--cpus", "1"]
-  end
-  config.vm.hostname = "tower"
-  config.vm.network :private_network, ip: "10.42.0.200"
-end
 end
