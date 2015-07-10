@@ -22,7 +22,12 @@ This brings up another node.
 * using host ranges
 * using registered variables
 
-### Requirements
+### Exercise
+
+In this exercise, let's include the nested playbook app.yml inside of site.yml
+
+Also, review how the rest of the playbook run is going to occur by reading the 
+playbook.
 
 ### General flow
 
@@ -31,4 +36,4 @@ This brings up another node.
 
 ### Commands
 
-	ansible-playbook site.yml 
+	ansible-playbook site.yml
