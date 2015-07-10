@@ -7,11 +7,11 @@
 
 # CentOS specific package installations
 - include: RedHat.yml
-  when: ansible_os_family  == "RedHat"
+  when: ansible_os_family  == ""
 
 # Ubuntu specific package installations
 - include: Debian.yml
-  when: ansible_os_family  == "Debian"
+  when: ansible_os_family  == ""
 
 - name: create sites directories
   file: path={{ item }} state=directory
@@ -21,11 +21,9 @@
   template: src=index.html.j2 dest={{ apache_docroot }}/index.html
 
 - name: copy httpd.conf
-  template: src=httpd.conf-{{ ansible_os_family }}.j2 dest={{ apache_config }}
+  template: src=httpd.conf-{{  }}.j2 dest={{ apache_config }}
   notify: restart apache
 
 - name: start and enable apache service
   service: name={{ apache_service }} state=started enabled=yes
   tags: service
-
-
