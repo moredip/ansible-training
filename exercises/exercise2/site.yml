@@ -5,7 +5,6 @@
 
   vars:
     packages:
-    - httpd
     - libselinux-python
 
   tasks:
@@ -18,7 +17,6 @@
 
   - name: copy index.html
     copy: src=files/index.html dest=/var/www/html/
-    notify: something happened
 
   - name: start and enable apache service
     service: name=httpd state=started enabled=yes

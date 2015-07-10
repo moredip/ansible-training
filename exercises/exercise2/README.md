@@ -17,8 +17,13 @@ If the nodes aren't already up, you'll need to run:
 
 Configuring systems with ad-hoc tasks can be annoying -- and ad-hoc tasks don't really keep a good record of how a system ***should*** be configured.
 
+### Exercise
 
-In this example, we show how to use a simple playbook to setup Apache on 2 hosts.
+In the playbook for this exercise, please ensure that httpd is installed on the
+target host.
 
+
+Then, in this example, we show how to use a simple playbook
+to setup Apache on 2 hosts by running the following command.
 
 	ansible-playbook site.yml
