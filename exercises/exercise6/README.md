@@ -16,14 +16,12 @@ This brings up another node.
 * role dependencies (parameterized)
 * looping with array of dictionaries for user information
 * using a common role
-* ansible-vault
 * inventory groups and child groups
 * roles
 * tagging
 * include_vars
 * conditionals
-* seperate task files
-* using mixed static/dynamic inventories
+* separate task files
 * using group_vars to set the remote user
 * provisioning instances and using wait_for
 * including playbooks within playbooks
@@ -38,7 +36,6 @@ This brings up another node.
 
 ### General flow
 
-
 Adds a new lameapp role that depends on apache role.  lameapp is a very simple python script. Show that lameapp role has passed a parameter to the apache role.  Show the custom filters.  Show how the rolling restart and delegation works and the custom modules.
 
 ### Rolling restart flow
@@ -51,17 +48,12 @@ The ```lameapp_version``` is found in the ```group_vars/all``` file.
 4. note failure, revert back to version 1.2
 
 Command to revert to previous version:
-	
+
 	ansible-playbook rolling_update.yml -v --limit 10.42.0.6,haproxy -i inventory/local
 
 
 
 ### Commands
 
-
-	# provision the infrastructure
-	ansible-playbook infra.yml -e "key_name=my_ec2_key" -i inventory/cloud
-	
 	# provision the apps
-	ansible-playbook site.yml -e @secrets.yml --ask-vault-pass -i inventory/cloud
-	ansible-playbook site.yml -e @secrets.yml --ask-vault-pass -i inventory/local
+	ansible-playbook site.yml

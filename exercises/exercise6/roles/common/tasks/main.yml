@@ -12,10 +12,3 @@
 # Ubuntu specific package installations
 - include: Debian.yml
   when: ansible_os_family  == "Debian"
-
-- name: include users
-  include_vars: users.yml
-
-- name: create users
-  user: name={{ item.username }} password={{ item.password }} comment="{{ item.comment }}"
-  with_items: users
