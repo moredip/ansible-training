@@ -15,6 +15,10 @@ Bring up the VMs by running the following command:
 
 	vagrant up node-1 node-2
 
+Add the vagrant ssh key:
+
+	ssh-add ~/.vagrant.d/insecure_private_key
+
 
 ### Commands
 
